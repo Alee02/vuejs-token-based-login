@@ -32,5 +32,11 @@ export default new Vuex.Store({
           commit('SET_USER_DATA', data)
         })
     }
+  },
+  getters: {
+    loggedIn (state) {
+      // double bang operator here returns a boolean regarding userData's existence//
+      return !!state.userData
+    }
   }
 })
