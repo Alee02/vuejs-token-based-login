@@ -11,6 +11,10 @@ export default new Vuex.Store({
   mutations: {
     SET_USER_DATA (state, payload) {
       state.userData = payload
+      localStorage.setItem('userData', JSON.stringify(payload))
+      axios.defaults.headers.common['Authorization'] = `Bearer ${
+        payload.token
+      }`
     }
   },
   actions: {
@@ -21,6 +25,6 @@ export default new Vuex.Store({
           console.log('user data is', data)
           commit('SET_USER_DATA', data)
         })
-      }
+    }
   }
 })

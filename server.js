@@ -12,7 +12,8 @@ app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
   res.json({
-    message: 'Welcome to the API.'
+    message: 'Welcome to the API.',
+    status: 'running'
   })
 })
 

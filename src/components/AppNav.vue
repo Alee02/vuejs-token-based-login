@@ -7,7 +7,7 @@
       Dashboard
     </router-link>
     <router-link to="/register">
-    Register
+      Register
     </router-link>
   </div>
 </template>
