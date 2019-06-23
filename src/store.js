@@ -22,7 +22,6 @@ export default new Vuex.Store({
       return axios
         .post('http://localhost:3000/register', credentials)
         .then(({ data }) => {
-          console.log('user data is', data)
           commit('SET_USER_DATA', data)
         })
     }
