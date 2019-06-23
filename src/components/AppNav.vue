@@ -6,10 +6,7 @@
     <router-link to="/dashboard">
       Dashboard
     </router-link>
-    <router-link to="/register">
-      Register
-    </router-link>
-    <router-link to="/login">
+    <router-link to="/login" class="button">
       Login
     </router-link>
   </div>
