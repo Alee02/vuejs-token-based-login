@@ -9,6 +9,9 @@
     <router-link v-if="!loggedIn" to="/login" class="button">
       Login
     </router-link>
+    <button v-else type="button" class="logoutButton" @click="logout">
+      Logout
+    </button>
   </div>
 </template>
 
@@ -18,6 +21,12 @@ export default {
   computed: {
     // ... is a mixin //
     ...authComputed
+  },
+  methods: {
+    logout () {
+      this.$store.dispatch('logout')
+      console.log('Logged out')
+    }
   }
 }
 </script>
