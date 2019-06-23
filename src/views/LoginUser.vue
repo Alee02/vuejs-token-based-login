@@ -1,10 +1,6 @@
 <template>
   <div>
-    <form @submit.prevent="register">
-      <label for="name">
-        Name:
-      </label>
-      <input v-model="name" type="text" name="name" value>
+    <form @submit.prevent="login">
       <label for="email">
         Email:
       </label>
@@ -12,9 +8,9 @@
       <label for="password">
         Password:
       </label>
-      <input v-model="password" type="password" name value>
+      <input v-model="password" type="password" name="password" value>
       <button type="submit" name="button">
-        Register
+        Login
       </button>
     </form>
   </div>
@@ -24,25 +20,22 @@
 export default {
   data () {
     return {
-      name: '',
       email: '',
       password: ''
     }
   },
   methods: {
-    register () {
+    login () {
       this.$store
-        .dispatch('register', {
-          name: this.name,
+        .dispatch('login', {
           email: this.email,
           password: this.password
         })
-        .then(() => {
-          this.$router.push({
-            name: 'dashboard'
-          })
-        })
+        .then(() => { this.$router.push({ name: 'dashboard' }) })
     }
   }
 }
 </script>
+
+<style scoped>
+</style>
